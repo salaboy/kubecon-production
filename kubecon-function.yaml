@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: kubecon
+spec:
+  template:
+    spec:
+      containers:
+        - image: salaboy/kubecon
+          env: 
+          - name: VERSION
+            value: 0.1.0
