@@ -2,29 +2,15 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   annotations:
-    serving.knative.dev/creator: system:serviceaccount:devenv-kubecon:vc-devenv-kubecon
-    serving.knative.dev/lastModifier: system:serviceaccount:devenv-kubecon:vc-devenv-kubecon
-    vcluster.loft.sh/object-name: kubecon
-    vcluster.loft.sh/object-namespace: default
-  creationTimestamp: "2022-09-24T10:20:17Z"
-  generation: 2
   labels:
-    boson.dev/function: "true"
-    boson.dev/runtime: go
     function.knative.dev: "true"
     function.knative.dev/name: kubecon
     function.knative.dev/runtime: go
   name: kubecon
-  namespace: default
-  resourceVersion: "357"
-  uid: 8dbd9d71-89f8-49bd-98de-c39df6e47b6d
 spec:
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        boson.dev/function: "true"
-        boson.dev/runtime: go
         function.knative.dev: "true"
         function.knative.dev/name: kubecon
         function.knative.dev/runtime: go
