@@ -4,15 +4,15 @@ metadata:
   annotations:
   labels:
     function.knative.dev: "true"
-    function.knative.dev/name: kubecon
+    function.knative.dev/name: loft-meetupn
     function.knative.dev/runtime: go
-  name: kubecon
+  name: loft-meetup 
 spec:
   template:
     metadata:
       labels:
         function.knative.dev: "true"
-        function.knative.dev/name: kubecon
+        function.knative.dev/name: loft-meetup 
         function.knative.dev/runtime: go
     spec:
       containerConcurrency: 0
@@ -20,7 +20,7 @@ spec:
       - env:
         - name: BUILT
           value: 20220924T112015
-        image: docker.io/salaboy/kubecon@sha256:630e04166f11ee01665ccc46e232748d4560e7335cb90dd78b1805c42ac8a24a8
+        image: docker.io/salaboy/loft-meetup@sha256:5fdc294bb9dceedf3ffb20c451aa2a95a9cb9c40b3f3827993c0e1a5eb92188a
         livenessProbe:
           httpGet:
             path: /health/liveness
