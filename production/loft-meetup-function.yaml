@@ -6,13 +6,13 @@ metadata:
     function.knative.dev: "true"
     function.knative.dev/name: kubecon
     function.knative.dev/runtime: go
-  name: kubecon 
+  name: kubecon
 spec:
   template:
     metadata:
       labels:
         function.knative.dev: "true"
-        function.knative.dev/name: kubecon 
+        function.knative.dev/name: kubecon
         function.knative.dev/runtime: go
     spec:
       containerConcurrency: 0
