@@ -4,15 +4,15 @@ metadata:
   annotations:
   labels:
     function.knative.dev: "true"
-    function.knative.dev/name: kubecon
+    function.knative.dev/name: rainbow-and-spider
     function.knative.dev/runtime: go
-  name: kubecon
+  name: rainbow-and-spider
 spec:
   template:
     metadata:
       labels:
         function.knative.dev: "true"
-        function.knative.dev/name: kubecon
+        function.knative.dev/name: rainbow-and-spider
         function.knative.dev/runtime: go
     spec:
       containerConcurrency: 0
@@ -20,7 +20,7 @@ spec:
       - env:
         - name: BUILT
           value: 20220924T112015
-        image: docker.io/salaboy/rainbows-to-tshirt@sha256:b55132a2f5ed9c98e78157426d502cb9e41ee4823d7bff01df64860e3c389fa2
+        image: docker.io/salaboy/rainbows-and-spider@sha256:741e54c11425a69384c288251fd2704ee2ce0eb994b8d66986b083417e875eda
         livenessProbe:
           httpGet:
             path: /health/liveness
