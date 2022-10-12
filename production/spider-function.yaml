@@ -1,0 +1,38 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  annotations:
+  labels:
+    function.knative.dev: "true"
+    function.knative.dev/name: rainbow-and-spider
+    function.knative.dev/runtime: go
+  name: rainbow-and-spider
+spec:
+  template:
+    metadata:
+      labels:
+        function.knative.dev: "true"
+        function.knative.dev/name: rainbow-and-spider
+        function.knative.dev/runtime: go
+    spec:
+      containerConcurrency: 0
+      containers:
+      - env:
+        - name: BUILT
+          value: 20220924T112015
+        image: docker.io/salaboy/rainbow-and-spider@sha256:741e54c11425a69384c288251fd2704ee2ce0eb994b8d66986b083417e875eda
+        livenessProbe:
+          httpGet:
+            path: /health/liveness
+            port: 0
+        name: user-container
+        readinessProbe:
+          httpGet:
+            path: /health/liveness
+            port: 0
+        resources: {}
+      enableServiceLinks: false
+      timeoutSeconds: 300
+  traffic:
+  - latestRevision: true
+    percent: 100
