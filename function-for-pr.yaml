@@ -4,15 +4,15 @@ metadata:
   annotations:
   labels:
     function.knative.dev: "true"
-    function.knative.dev/name: rainbow-and-spider
+    function.knative.dev/name: spiderize
     function.knative.dev/runtime: go
-  name: rainbow-and-spider
+  name: spiderize
 spec:
   template:
     metadata:
       labels:
         function.knative.dev: "true"
-        function.knative.dev/name: rainbow-and-spider
+        function.knative.dev/name: spiderize
         function.knative.dev/runtime: go
     spec:
       containerConcurrency: 0
@@ -20,7 +20,7 @@ spec:
       - env:
         - name: BUILT
           value: 20220924T112015
-        image: docker.io/salaboy/rainbow-and-spider@sha256:741e54c11425a69384c288251fd2704ee2ce0eb994b8d66986b083417e875eda
+        image: docker.io/salaboy/spiderize@sha256:b4afe88f742b1e2dafce9391be8430959d7205be306ee250686f5a1fe8b8369c
         livenessProbe:
           httpGet:
             path: /health/liveness
