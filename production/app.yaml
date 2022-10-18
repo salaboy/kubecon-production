@@ -20,7 +20,7 @@ spec:
       - env:
         - name: BUILT
           value: 20220924T112015
-        image: docker.io/salaboy/spiderize@sha256:64decc95144b43b01f15d35ee5a9c86c341e8bdb52bfff368f92e0cbd7cc5106
+        image: docker.io/salaboy/app@sha256:0a089de74350f8f565dbaf563e83900e5e5eb526fb31fa3f64c96c43a5c6aeac
         livenessProbe:
           httpGet:
             path: /health/liveness
